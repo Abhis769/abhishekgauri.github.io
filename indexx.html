@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Na Gabbu ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 2px solid #ff6b8b;
+        }
+        
+        h1 {
+            color: #ff6b8b;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .heart {
+            color: #ff6b8b;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .message-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            border-left: 8px solid #ff6b8b;
+        }
+        
+        .message-section h2 {
+            color: #ff6b8b;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            font-weight: bold;
+            color: #ff6b8b;
+            font-size: 1.4rem;
+        }
+        
+        .media-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .images-container, .video-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .media-title {
+            color: #ff6b8b;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .image-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-wrapper {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .sharing-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .sharing-section h2 {
+            color: #ff6b8b;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .share-link {
+            background-color: #f8f9fa;
+            border: 2px dashed #ff6b8b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            word-break: break-all;
+            text-align: center;
+        }
+        
+        .copy-btn {
+            background-color: #ff6b8b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .copy-btn:hover {
+            background-color: #ff5577;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(255, 107, 139, 0.3);
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .instructions h3 {
+            color: #ff6b8b;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart-float {
+            position: absolute;
+            color: rgba(255, 107, 139, 0.5);
+            font-size: 20px;
+            animation: float 5s infinite linear;
+        }
+        
+        .fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .fullscreen-img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 107, 139, 0.3);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .photo-caption {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .message-section, .sharing-section, .images-container, .video-container {
+                padding: 25px;
+            }
+            
+            .media-section {
+                flex-direction: column;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <!-- Fullscreen Image Viewer -->
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img class="fullscreen-img" id="fullscreenImg" src="" alt="">
+        <div class="photo-caption" id="photoCaption"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>To My Beautiful Gabbu <span class="heart">❤️</span></h1>
+            <p class="subtitle">I LOVE YOU SO MUCH</p>
+            <p>I made a mistake and I'm truly sorry for that Mala Maff kar</p>
+        </header>
+        
+        <section class="message-section">
+            <h2>हे फक्त तुझ्यासाठी 😘❤️</h2>
+            <p>My dearest love,</p>
+                        <p>आपण दूर आहोत हे खरं आहे, पण तुझ्यावरील माझं प्रेम कधीच कमी होणार नाही. कधी आवाज ऐकायची इच्छा होते, कधी फक्त 'तू आहेस' हे जाणून शांत वाटतं. हे message फक्त सांगायला — तू माझ्यासाठी खूप important आहेस ❤️</p>
+            <p>He bgh je kahi jhal maz chukl aahe pn please aata tari ye g javal</p>
+            <p>Please know that I'm committed to being better for you, to listening more, understanding more, and showing you every day how much you mean to me.</p>
+                       <div class="signature">
+                <p>With all my love and regret,</p>
+                <p>Mla Kharch tuzi aathwan yetey aani i dont wana hurt you soorry</p>
+            </div>
+        </section>
+        
+        <div class="media-section">
+            <div class="images-container">
+                <h2 class="media-title">Our Happy Memories <i class="fas fa-images"></i></h2>
+                <p>These photos remind me of all the beautiful moments we've shared together.</p>
+                <div class="image-gallery">
+                    <!-- Photo 1 - CORRECTED Google Drive Link -->
+                    <div class="image-item" onclick="openFullscreen('https://drive.google.com/thumbnail?id=1sSgaHzCrqg8MrtEzcymD_BleiU7Bql6q&sz=w2000', 'Our beautiful memory together ❤️')">
+                        <img src="https://drive.google.com/thumbnail?id=1sSgaHzCrqg8MrtEzcymD_BleiU7Bql6q&sz=w1000" 
+                             alt="Our special moment"
+                             onerror="replaceWithBackup(this, 0)">
+                    </div>
+                    
+                    <!-- Photo 2 - CORRECTED Google Drive Link -->
+                    <div class="image-item" onclick="openFullscreen('https://drive.google.com/thumbnail?id=1f-5XWq0X9wH5JAw43cg77CM_KuEhIdP0&sz=w2000', 'Always thinking of you 💕')">
+                        <img src="https://drive.google.com/thumbnail?id=1f-5XWq0X9wH5JAw43cg77CM_KuEhIdP0&sz=w1000" 
+                             alt="Thinking of you"
+                             onerror="replaceWithBackup(this, 1)">
+                    </div>
+                    
+                    <!-- Photo 3 - CORRECTED Google Drive Link -->
+                    <div class="image-item" onclick="openFullscreen('https://drive.google.com/thumbnail?id=1qzba_woYbkuKC2J1bkq4ZErVsDeo7Bvu&sz=w2000', 'You make everything better 🌟')">
+                        <img src="https://drive.google.com/thumbnail?id=1qzba_woYbkuKC2J1bkq4ZErVsDeo7Bvu&sz=w1000" 
+                             alt="You make me happy"
+                             onerror="replaceWithBackup(this, 2)">
+                    </div>
+                    
+                    <!-- Photo 4 - Stock image -->
+                    <div class="image-item" onclick="openFullscreen('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80', 'My heart belongs to you 💖')">
+                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="My heart is yours">
+                    </div>
+                </div>
+                <p style="margin-top: 20px; text-align: center; font-style: italic; color: #ff6b8b; font-weight: bold;">
+                    Click on any photo to see it larger! Each picture tells a story of our love ❤️
+                </p>
+            </div>
+            
+            <div class="video-container">
+                <h2 class="media-title">My Heartfelt Video Message <i class="fas fa-video"></i></h2>
+                <p>This video comes straight from my heart. Please watch it to see how truly sorry I am.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1y6wXAR7EmYCynFomgqrui9vwQLriauCL/preview" 
+                            width="100%" 
+                            height="300" 
+                            allow="autoplay" 
+                            allowfullscreen 
+                            title="My apology video to Gabbu">
+                    </iframe>
+                </div>
+                <p style="margin-top: 20px; text-align: center; color: #ff6b8b; font-weight: bold;">
+                    This video will let you see the sincerity in my eyes and hear it in my voice.
+                </p>
+            </div>
+        </div>
+        
+        <div class="sharing-section">
+            <h2>This Website is Just For You ❤️</h2>
+            <p>I created this especially for you, Gabbu. Every word, every photo, and every detail is meant to show you how much you mean to me.</p>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-heart"></i> A Special Message:</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    Baal he khas me tuzysathi kel aahe mazymule tula je kahi tass jhala aahe aani me evdhe images nahi add kele pn aahe khas he mazysathi sorry but i love you me improve kartoy swatala tuzysathi aani tyasathi me hel aahe. This website is my way of showing you that I'm willing to put in the effort to make things right. sorry tula nahi manavata yet mala nit maz bolan chukl asel pn me ghetoy efforts me ajun try karel. I LOVE YOU SO MUCH GABBU
+                </p>
+                <p style="margin-top: 15px; font-style: italic; color: #ff6b8b;">
+                    You're not just my girlfriend, you're my everything. Please forgive me.
+                </p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Made with <span class="heart">❤️</span> specially for YOU -I Love you </p>
+            <p>Please mala maaf kar soory</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">This website will remain online as long as our love lasts - forever</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Backup images in case Google Drive fails
+        const backupImages = [
+            'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
+        ];
+        
+        // Function to replace failed images
+        function replaceWithBackup(imgElement, index) {
+            console.log('Google Drive image failed, using backup image');
+            imgElement.src = backupImages[index];
+            // Also update the fullscreen link
+            const parentDiv = imgElement.closest('.image-item');
+            if (parentDiv) {
+                parentDiv.setAttribute('onclick', `openFullscreen('${backupImages[index]}', '${parentDiv.getAttribute('onclick').split("'")[3] || 'Our memory'}')`);
+            }
+        }
+        
+        // Create floating hearts
+        const floatingHearts = document.getElementById('floatingHearts');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            floatingHearts.appendChild(heart);
+        }
+        
+        // Fullscreen image viewer functions
+        const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+        const fullscreenImg = document.getElementById('fullscreenImg');
+        const photoCaption = document.getElementById('photoCaption');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        function openFullscreen(imgSrc, caption) {
+            fullscreenImg.src = imgSrc;
+            photoCaption.textContent = caption;
+            fullscreenOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeFullscreen() {
+            fullscreenOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        closeBtn.addEventListener('click', closeFullscreen);
+        
+        fullscreenOverlay.addEventListener('click', function(e) {
+            if (e.target === fullscreenOverlay) {
+                closeFullscreen();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+            }
+        });
+        
+        // Test Google Drive images
+        window.addEventListener('load', function() {
+            console.log('Testing Google Drive image links...');
+            
+            // Test each image
+            const testImages = [
+                'https://drive.google.com/thumbnail?id=1sSgaHzCrqg8MrtEzcymD_BleiU7Bql6q&sz=w1000',
+                'https://drive.google.com/thumbnail?id=1f-5XWq0X9wH5JAw43cg77CM_KuEhIdP0&sz=w1000',
+                'https://drive.google.com/thumbnail?id=1qzba_woYbkuKC2J1bkq4ZErVsDeo7Bvu&sz=w1000'
+            ];
+            
+            testImages.forEach((url, index) => {
+                const testImg = new Image();
+                testImg.onload = function() {
+                    console.log(`✓ Image ${index + 1} works: ${url}`);
+                };
+                testImg.onerror = function() {
+                    console.log(`✗ Image ${index + 1} failed: ${url}`);
+                    console.log('Trying alternative format...');
+                    
+                    // Try alternative format
+                    const altUrl = url.replace('thumbnail?id=', 'uc?export=view&id=').replace('&sz=w1000', '');
+                    const altTest = new Image();
+                    altTest.onload = function() {
+                        console.log(`✓ Alternative format works: ${altUrl}`);
+                        // Update the actual image on page
+                        const images = document.querySelectorAll('.image-item img');
+                        if (images[index]) {
+                            images[index].src = altUrl;
+                            const parentDiv = images[index].closest('.image-item');
+                            if (parentDiv) {
+                                const caption = parentDiv.getAttribute('onclick').split("'")[3] || 'Our memory';
+                                parentDiv.setAttribute('onclick', `openFullscreen('${altUrl.replace('w1000', 'w2000')}', '${caption}')`);
+                            }
+                        }
+                    };
+                    altTest.onerror = function() {
+                        console.log(`✗ Alternative also failed for image ${index + 1}`);
+                    };
+                    altTest.src = altUrl;
+                };
+                testImg.src = url;
+            });
+        });
+        
+        // Heart animation on click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.heart') || e.target.classList.contains('heart')) {
+                createHeartAnimation(e.clientX, e.clientY);
+            }
+        });
+        
+        function createHeartAnimation(x, y) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+            heart.style.fontSize = '20px';
+            heart.style.color = '#ff6b8b';
+            heart.style.zIndex = '1000';
+            heart.style.pointerEvents = 'none';
+            heart.style.animation = 'float 2s ease-out forwards';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        }
+        
+        // Romantic messages
+        const romanticMessages = [
+            "I love you Gabbu ❤️",
+            "Please Sorry 🥺",
+            "You mean everything to me 💕",
+            "Me he apple moments sathi kel aahe 💖",
+            "Mla tuzysobt time spend karaych aahe yar majhyamule tula evdhtrass jhala sorry 🌟"
+        ];
+        
+        setInterval(() => {
+            if (document.hidden) return;
+            
+            const randomMsg = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+            console.log(`💌 ${randomMsg}`);
+            
+            if (Math.random() > 0.7) {
+                createHeartAnimation(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
